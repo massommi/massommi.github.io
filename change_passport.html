@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паспорт</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <style>
+         body{
+            background-color: white;
+            color: #333;
+
+        }
+        .passport-container {
+            position: relative;
+            display: inline-block;
+        }
+        .passport-container img {
+            width: 600px;
+            height: auto;
+        }
+        .text {
+            position: absolute;
+            color: black;
+            font-size: 1.2em;
+        }
+        #issued {
+            top: 90px;
+            left: 170px;
+        }
+        #surname {
+            top: 468px;
+            left: 330px;
+        }
+        #name {
+            top: 530px;
+            left: 340px;
+        }
+        #father {
+            top: 565px;
+            left: 315px;
+        }
+        #gender {
+            top: 596px;
+            left: 234px;
+        }
+        #birthplace {
+            top: 625px;
+            left: 340px;
+        }
+   
+        #photo {
+            position: absolute;
+            top: 494px;
+            left: 25px;
+            width: 168px;
+            height: auto;
+            
+
+       
+        }
+        .button-container {
+        
+            margin-left: 800px;
+           
+        }
+        button {
+            padding: 20px 30px;
+            background-color: #992686;
+            color: white;
+            
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        .to-dom {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #992686;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+      
+
+    </style>
+
+ 
+     <nav>
+        <ul>
+           
+            <li><a href="index.html" target="_self">Главная</a></li>
+            <li><a href="rats.html" target="_self">Виды декоративных крыс</a></li>
+            <li><a href="algorithm_solution.html" target="_self">Алгоритмическая задача</a></li>
+            <li><a href="change_passport.html" class='active' target="_self">Паспорт</a></li>
+            <li><a href="https://electives.hse.ru/minor_programming_spb/" target="_blank">Внешний сайт</a></li>
+            <li><a href="contact.html" target="_self">Регистрация</a></li>
+        </ul>
+    </nav>
+
+   
+    
+</head>
+<body>
+    <h1>Паспорт</h1>
+    <div class="passport-container">
+        <img src="mypassport.ru/fon.png" alt="Паспорт">
+        <img id='photo' src="mypassport.ru/foto1.jpg" alt="Фото">
+        
+
+        <div class="text" id="issued">ОТДЕЛОМ ВНУТРЕННИХ ДЕЛ</div>
+        <div class="text" id="surname">Субботина</div>
+        <div class="text" id="name">Милена</div>
+        <div class="text" id="father">Александровна</div>
+        <div class="text" id="gender">Жен</div>
+        <div class="text" id="birthplace">Москва</div>
+    </div>
+    
+    <div class="button-container">
+        <button id="translateButton">Поменять</button>
+    </div>
+
+    <a href="DOM.html" class="to-dom" target="_blank"> Информация из DOM</a>
+
+
+<script>
+    document.getElementById('translateButton').addEventListener('click', function() {
+        const issuedText = document.getElementById('issued');
+        const surnameText = document.getElementById('surname');
+        const nameText = document.getElementById('name');
+        const patronymicText = document.getElementById('father');
+        const genderText = document.getElementById('gender');
+        const birthplaceText = document.getElementById('birthplace');
+
+        if (issuedText.innerText === 'ОТДЕЛОМ ВНУТРЕННИХ ДЕЛ') {
+            issuedText.innerText = 'OTDELOM VNUTRENNIH DEL';
+            surnameText.innerText = 'Subbotina';
+            nameText.innerText = 'Milena';
+            patronymicText.innerText = 'Alexandrovna';
+            genderText.innerText = 'Female';
+            birthplaceText.innerText = 'Moscow';
+        } else {
+            issuedText.innerText = 'ОТДЕЛОМ ВНУТРЕННИХ ДЕЛ';
+            surnameText.innerText = 'Субботина';
+            nameText.innerText = 'Милена';
+            patronymicText.innerText = 'Александровна';
+            genderText.innerText = 'Жен';
+            birthplaceText.innerText = 'Москва';
+        }
+    });
+</script>
+
+
+</html>

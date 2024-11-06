@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма для отправки контактных данных и заказа</title>
+     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+     <style>
+     body{
+        background-color: white;
+        color: #333;
+
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"] {
+        width: 100%; /* Ширина 100% */
+        padding: 10px; /* Отступы внутри полей ввода */
+        border: 3px solid #ccc; /* Цвет рамки */
+        
+       
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: 10px; /* Отступ справа для радио-кнопок и чекбоксов */
+    }
+
+    input[type="submit"] {
+        background-color: #992686; /* Цвет фона кнопки */
+        color: #fff; /* Цвет текста кнопки */
+        border: none; /* Убираем рамку */
+        padding: 10px 15px; /* Отступы внутри кнопки */
+        cursor: pointer; /* Указатель при наведении */
+       
+        width: 100%; /* Ширина 100% */
+    }
+
+    
+
+    </style>
+     <nav>
+        <ul>
+            <li><a href="index.html" >Главная</a></li>
+            <li><a href="rats.html">Виды декоративных крыс</a></li>
+            <li><a href="algorithm_solution.html">Алгоритмическая задача</a></li>  
+            <li><a href="change_passport.html">Паспорт</a></li>
+            <li><a href="https://electives.hse.ru/minor_programming_spb/" target="_blank">Внешний сайт</a></li>
+            <li><a href="contact.html" class='active'>Регистрация</a></li>
+       
+        </ul>
+    </nav>
+</head>
+<body>
+    <h3 align="center">Форма</h3>
+    <!--<form action="../../cgi-bin/form_action.py" method='get' target='_self'>-->
+    <!--<form action="http://185.182.111.214:7628/cgi-bin/form_action.py" method='get' target='_self'>-->
+    <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <p>Для поисковика:<input type="hidden"  name="q" value="search"></p>
+        <p>Фамилия: <input type="Text" name="last_name" size=20  value="Субботина"></p>
+        <p>Возраст: <input type="Number" name="age" size=20 value="0"></p>
+        <p>Место проживания:
+            <input type="Radio" name="place" value="Moscow">Москва
+            <input type="Radio" name="place" value="Nizhny" checked >Санкт-Петербург
+        </p>
+    
+      
+    
+        <p> Дополнительная информация:
+            <br>
+            <TEXTAREA cols=80 rows=4 name="textarea" >Для заметок</TEXTAREA>
+        </p>
+    
+        <p>Дата: <input type="date" name="user_date"  value='2024-10-02'></p>
+        <p>Пароль: <input type="Password" name="password" size=9  value="123"></p>
+        <!--Все нижерасположенные фрагменты перемещать нельзя, редактировать можно-->
+      
+        <p>
+            <input type="Reset"  name="Reset"  value="Обновить">
+            <input type="Submit" name="submit"  value="Отправить">
+        </p>
+    
+    </form>
+</body>
+</html>

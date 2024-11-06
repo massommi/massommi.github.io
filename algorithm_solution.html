@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка неравенств</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <style>
+        body {
+            background-color: white;
+            color: #333;
+        }
+    </style>
+    <nav>
+        <ul>
+            <li><a href="index.html" target="_self">Главная</a></li>
+            <li><a href="rats.html" target="_self">Виды декоративных крыс</a></li>
+            <li><a href="algorithm_solution.html" class='active' target="_self">Алгоритмическая задача</a></li>
+            <li><a href="change_passport.html" target="_self">Паспорт</a></li>
+            <li><a href="https://electives.hse.ru/minor_programming_spb/" target="_blank">Внешний сайт</a></li>
+            <li><a href="contact.html" target="_self">Регистрация</a></li>
+        </ul>
+    </nav>
+    <script>
+        function checkInequalities() {
+            const A = parseFloat(document.getElementById('A').value);
+            const B = parseFloat(document.getElementById('B').value);
+            const C = parseFloat(document.getElementById('C').value);
+            let result = '';
+
+            if (A < B && B < C) {
+                result = 'Выполняется неравенство A < B < C';
+            } else if (A < B && B > C) {
+                result = 'Выполняется неравенство A < B > C';
+            } else {
+                result = 'Не выполняется ни одно из неравенств';
+            }
+
+            document.getElementById('result').innerText = result;
+        }
+
+        function sendData(event) {
+            // Предотвращаем стандартное поведение формы
+            event.preventDefault();
+
+            // Получаем данные из полей
+            const A = document.getElementById('A').value;
+            const B = document.getElementById('B').value;
+            const C = document.getElementById('C').value;
+
+            // Формируем строку запроса
+            const query = `Значения: A=${A}, B=${B}, C=${C}`;
+
+            // Открываем новую вкладку с поиском
+            window.open(`https://www.bing.com/search?q=${encodeURIComponent(query)}`, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <form id="UserEnter" name="UserEnter" onsubmit="sendData(event)">
+        <h1>Проверка неравенств</h1>
+        <label for="A">Введите A:</label>
+        <input type="number" step="any" id="A" required>
+        <br>
+        <label for="B">Введите B:</label>
+        <input type="number" step="any" id="B" required>
+        <br>
+        <label for="C">Введите C:</label>
+        <input type="number" step="any" id="C" required>
+        <br><br>
+        <button type="button" onclick="checkInequalities()">Проверить</button>
+        <button type="submit">Отправить</button> <!-- Кнопка для отправки формы -->
+        <h3 id="result"></h3>
+    </form>
+</body>
+</html>
